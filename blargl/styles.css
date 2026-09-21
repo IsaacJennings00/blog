@@ -1,0 +1,165 @@
+@font-face {
+  font-family: 'charter';
+  src: url('../charter_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'charter';
+  src: url('../charter_italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+html, body {
+  margin: 0;
+  height: 100vh;
+  background: #fffff8;
+  color: #222;
+}
+
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  height: 2.6em;
+  padding: 0 0.7em;
+  box-sizing: border-box;
+  background: #eee;
+  border-bottom: 1px solid #ddd;
+  font-family: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  font-size: 14px;
+}
+
+.chrome input[type="text"] {
+  flex: 1;
+  min-width: 8em;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 0.3em 0.5em;
+  font: inherit;
+}
+
+.chrome input[type="date"] {
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 0.3em 0.4em;
+  font: inherit;
+}
+
+.chrome button {
+  border: 1px solid #333;
+  background: #222;
+  color: #fff;
+  padding: 0.3em 0.8em;
+  font: inherit;
+  cursor: pointer;
+}
+
+.chrome button:hover {
+  background: #444;
+}
+
+#status {
+  max-width: 28em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #444;
+}
+
+.bg {
+  background-color: #eee;
+  height: calc(100vh - 2.6em);
+  position: relative;
+}
+
+.input {
+  margin: 0;
+  width: 49vw;
+  height: 100%;
+  border: none;
+  background-color: #fffff8;
+  resize: none;
+  float: left;
+  padding: 0.8em 0.7em;
+  box-sizing: border-box;
+  font-size: 20px;
+  overflow: auto;
+  font-family: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+}
+
+#output {
+  font-family: "charter", Georgia, serif;
+  padding-top: 0.6em;
+  margin-left: 2vw;
+  width: 49vw;
+  hyphens: auto;
+}
+
+#output p, #output li {
+  margin-bottom: 1em;
+  line-height: 1.35;
+}
+
+#output h1, #output h2, #output h3, #output h4 {
+  margin: 0.6em 0 0.4em;
+}
+
+#output pre {
+  margin-bottom: 1em;
+  padding: 5px;
+  background: #d9e4ea;
+  overflow-x: auto;
+  font-family: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  font-size: 90%;
+}
+
+#output code {
+  font-family: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+  font-size: 90%;
+}
+
+#output img, #output video {
+  max-width: 100%;
+}
+
+#output a {
+  color: inherit;
+}
+
+.wordcount {
+  position: absolute;
+  right: 2em;
+  bottom: 2em;
+  min-width: 4em;
+  padding: 5px;
+  border-radius: 10px;
+  text-align: right;
+  background-color: #eee;
+  font-family: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+}
+
+@media print {
+  .chrome, .wordcount, #input {
+    display: none !important;
+  }
+  body * {
+    visibility: hidden;
+  }
+  #output, #output * {
+    visibility: visible;
+  }
+  #output {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0;
+    float: none;
+  }
+}

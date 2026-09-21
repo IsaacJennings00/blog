@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blargl — write a post</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="../head.svg">
+  </head>
+  <body>
+    <div class="chrome">
+      <input id="title" type="text" placeholder="Post title" autocomplete="off" spellcheck="true">
+      <input id="date" type="date">
+      <button id="save" type="button">Save post</button>
+      <span id="status" role="status"></span>
+    </div>
+    <div class="bg">
+      <textarea id="input" class="input" placeholder="Write in Markdown…"></textarea>
+      <div id="output" class="input content"></div>
+      <div id="wordcount" class="wordcount">0</div>
+    </div>
+    <script src="marked.min.js"></script>
+    <script src="blargl.js"></script>
+  </body>
+</html>

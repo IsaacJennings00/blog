@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="The personal blog of Isaac Jennings"/>
+    <meta name="author" content="Isaac Jennings"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Isaac's Blog</title>
+    <link rel="canonical" href="https://blog.isaacjennings.org/"/>
+    <link rel="alternate" type="application/rss+xml" title="Isaac's Blog" href="https://blog.isaacjennings.org/feed.rss"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Isaac's Blog"/>
+    <meta property="og:description" content="The personal blog of Isaac Jennings"/>
+    <meta property="og:url" content="https://blog.isaacjennings.org/"/>
+    <meta property="og:site_name" content="Isaac's Blog"/>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Isaac's Blog","description":"The personal blog of Isaac Jennings","url":"https://blog.isaacjennings.org/","author":{"@type":"Person","name":"Isaac Jennings","url":"https://isaacjennings.org"}}</script>
+    <link rel="icon" type="image/svg+xml" href="./head.svg"/>
+    <style>
+      @font-face {
+        font-family: 'charterregular';
+        src: url('charter_regular-webfont.eot');
+        src: url('charter_regular-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      html, body { background: #fffff8; }
+      .content {
+        max-width: 700px;
+        margin-left: 10vw;
+        font-size: 20px;
+        font-family: 'charterregular', Georgia, serif;
+      }
+      h1 {
+        font-weight: 500;
+        font-size: 30px;
+      }
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      li {
+        padding-bottom: 0.2em;
+      }
+      a {
+        color: #222;
+        text-decoration: none;
+      }
+      a:hover {
+        border-bottom: 2px solid #d6dde3;
+      }
+      .bottom a {
+        border-bottom: 2px solid #d6dde3;
+      }
+      .empty {
+        color: #666;
+        font-style: italic;
+      }
+      @media all and (max-width:1000px) {
+        .content {
+          max-width: 100%;
+          margin-left: 1.5em;
+          margin-right: 1.5em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Isaac's Blog</h1>
+      <ul>
+        {{#posts}}
+        <li class="post"><a href="/{{out_file}}">{{title}}</a></li>
+        {{/posts}}
+      </ul>
+      {{^posts}}
+      <p class="empty">No posts yet.</p>
+      {{/posts}}
+      <hr/>
+      <p class="bottom">
+        You can visit <a href="https://isaacjennings.org">my website</a>
+        or <a href="https://hellonoon.studio">hellonoon.studio</a>.
+      </p>
+      <p class="bottom">
+        This blog <a href="/feed.rss">has an RSS feed</a>.
+      </p>
+    </div>
+  </body>
+</html>
