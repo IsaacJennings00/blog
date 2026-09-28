@@ -42,9 +42,14 @@ Images go in `assets/` and are referenced as `/assets/your-file.png`.
 
 ## Deploying to blog.isaacjennings.org
 
-`out/` is a plain static site. Point the `blog.isaacjennings.org` DNS record at whatever hosts that folder (GitHub Pages, Cloudflare Pages, Netlify, or a plain nginx/Caddy server).
+`out/` is a plain static site, deployed by rsyncing it to the VPS (`root@home`) serving `blog.isaacjennings.org`:
 
-If this repo is on GitHub with Pages enabled, `.github/workflows/deploy.yml` builds with pandoc and publishes `out/` on every push to `main`. Add a CNAME (or ALIAS/ANAME) for `blog` to the Pages hostname, and GitHub will pick up the `CNAME` file already in this repo.
+```sh
+make build
+rsync -avz --delete out/ root@home:/var/www/blog/
+```
+
+Use `rsync -avzn --delete --itemize-changes ...` first to preview what would change.
 
 ## Layout of this repo
 

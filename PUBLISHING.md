@@ -67,9 +67,12 @@ If you open `/blargl/` on the live site instead of localhost, Save cannot write 
 
 ## Put it online
 
-`out/` is the whole website. After a save, deploy that folder to whatever hosts [blog.isaacjennings.org](https://blog.isaacjennings.org).
+`out/` is the whole website. After a save, rsync it to the VPS serving [blog.isaacjennings.org](https://blog.isaacjennings.org):
 
-If GitHub Pages is connected to this repo, pushing the new `posts/*.md` to `main` is enough: the deploy workflow builds `out/` and publishes it.
+```sh
+make build
+rsync -avz --delete out/ root@home:/var/www/blog/
+```
 
 ### Checklist
 
@@ -78,4 +81,4 @@ If GitHub Pages is connected to this repo, pushing the new `posts/*.md` to `main
 - [ ] Images in `assets/` and linked as `/assets/…`
 - [ ] Saved from blargl (or `python3 publish.py` after a manual edit)
 - [ ] Checked the post at `http://127.0.0.1:8000/Your_Title.html`
-- [ ] Deployed `out/` (or pushed to `main`)
+- [ ] Deployed `out/` via rsync
